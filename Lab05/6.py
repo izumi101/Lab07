@@ -1,7 +1,9 @@
 import re
-pattern = r'a.*b$'
-test_strings = ["ab", "axb", "a123b", "a", "b", "abc"]
 
-for string in test_strings:
-    if re.fullmatch(pattern, string):
-        print(f"Matched: {string}")
+def replace_with_colon(text):
+    pattern = r"[ ,.]"  
+    return re.sub(pattern, ":", text)
+
+test_string = "Привет, мир. Это тест. 123.45"
+result = replace_with_colon(test_string)
+print(result)
